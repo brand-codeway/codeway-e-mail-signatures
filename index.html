@@ -7,59 +7,62 @@
   <style>
     body { font-family: Arial, sans-serif; margin: 24px; color:#111; }
     .wrap { max-width: 980px; margin: 0 auto; }
-    h1 { font-size: 20px; margin: 0 0 8px; }
-    p { margin: 6px 0 10px; color:#333; }
-    .card { border: 1px solid #e5e5e5; border-radius: 12px; padding: 16px; margin: 14px 0; }
+    h1 { font-size: 22px; margin: 0 0 10px; }
+    .step { margin: 0 0 18px; color:#333; }
+    .card { border: 1px solid #e6e6e6; border-radius: 14px; padding: 16px; margin: 14px 0; }
     .row { display:flex; align-items:center; justify-content:space-between; gap: 12px; flex-wrap:wrap; }
-    .title { font-weight: 700; }
+    .title { font-weight: 700; font-size: 16px; }
     button { border: 1px solid #ddd; background:#fff; border-radius: 10px; padding: 8px 12px; cursor:pointer; }
     button:active { transform: translateY(1px); }
-    .ok { font-size: 12px; color:#0a7a0a; display:none; }
-    .sigbox { padding: 12px; border: 1px dashed #ddd; border-radius: 10px; background:#fafafa; overflow-x:auto; }
+    .ok { font-size: 12px; color:#0a7a0a; display:none; margin-left:8px; }
+    .sigbox { margin-top: 12px; padding: 12px; border: 1px dashed #ddd; border-radius: 12px; background:#fafafa; overflow-x:auto; }
+    .sigbox table { border-collapse: collapse; }
   </style>
 </head>
 <body>
 <div class="wrap">
   <h1>Codeway Email Signature Templates</h1>
-  <p>Step: Choose your preferred layout → Click Copy → Go to Gmail Settings → Paste into Signature → Change Template With Your Information → Save Changes.</p>
+  <div class="step">Step: Choose your preferred layout → Click Copy → Go to Gmail Settings → Paste into Signature → Save Changes.</div>
+
+  <!--
+    IMPORTANT:
+    Images are referenced via BASE_URL below.
+    Set BASE_URL to your GitHub Pages base URL so Gmail can load the images.
+    Example:
+      const BASE_URL = "https://brand-codeway.github.io/codeway-e-mail-signatures";
+  -->
 
   <!-- ===== Layout 1 ===== -->
   <div class="card">
     <div class="row">
       <div class="title">Layout 1</div>
       <div>
-        <button onclick="copySig('sig1','ok1')">Copy</button>
-        <span id="ok1" class="ok">Copied ✅</span>
+        <button onclick="copySig('sig1','ok1')">Copy</button><span id="ok1" class="ok">Copied ✅</span>
       </div>
     </div>
+
     <div class="sigbox" id="sig1">
-      <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.35; color:#111;">
+      <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size:14px; line-height:1.35; color:#111;">
         <tr>
-          <!-- Left / Logo + socials -->
-          <td style="vertical-align: top; padding-right: 16px; width: 140px;">
+          <td valign="top" style="padding-right:16px; width:140px;">
             <table cellpadding="0" cellspacing="0" border="0" style="width:140px;">
               <tr>
                 <td style="text-align:center;">
-                  <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/logo.png" width="120" alt="Codeway" style="display:block; border:0; outline:none; margin:0 auto;">
+                  <img data-asset="logo1" width="120" alt="Codeway" style="display:block; border:0; outline:none; margin:0 auto;">
                 </td>
               </tr>
               <tr>
-                <td style="text-align:center; padding-top: 10px;">
+                <td style="text-align:center; padding-top:10px;">
                   <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
                     <tr>
-                      <td style="padding-right: 8px;">
+                      <td style="padding-right:10px;">
                         <a href="https://www.instagram.com/codeway/?hl=en" target="_blank" style="text-decoration:none;">
-                          <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/instagram.png" width="22" height="22" alt="Instagram" style="display:block; border:0; outline:none;">
-                        </a>
-                      </td>
-                      <td style="padding-right: 8px;">
-                        <a href="https://www.youtube.com/@codewaystudios" target="_blank" style="text-decoration:none;">
-                          <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/youtube.png" width="22" height="22" alt="YouTube" style="display:block; border:0; outline:none;">
+                          <img data-asset="ig" width="22" height="22" alt="Instagram" style="display:block; border:0; outline:none;">
                         </a>
                       </td>
                       <td>
                         <a href="https://www.linkedin.com/company/codeway" target="_blank" style="text-decoration:none;">
-                          <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/linkedin.png" width="22" height="22" alt="LinkedIn" style="display:block; border:0; outline:none;">
+                          <img data-asset="li" width="22" height="22" alt="LinkedIn" style="display:block; border:0; outline:none;">
                         </a>
                       </td>
                     </tr>
@@ -69,31 +72,21 @@
             </table>
           </td>
 
-          <!-- Right / Text -->
-          <td style="vertical-align: top;">
-            <div style="font-size: 16px; font-weight: 700; white-space: nowrap;">Name&nbsp;Surname</div>
-            <div style="font-weight: 600; margin-top: 2px;">Job Title</div>
+          <td valign="top" style="padding-top:0;">
+            <div style="font-size:16px; font-weight:700;">Name Surname</div>
+            <div style="font-weight:600; margin-top:2px;">Job Title</div>
 
-            <div style="margin-top: 12px;">
-              <div>
-                <a href="mailto:xxx@codeway.co" style="color:#111; text-decoration:none;">xxx@codeway.co</a>
-              </div>
-              <div style="margin-top: 2px;">+XXX XXX XX XX <span style="color:#666;">(Optional)</span></div>
+            <div style="margin-top:12px;">
+              <a href="mailto:xxx@codeway.co" style="color:#111; text-decoration:none;">xxx@codeway.co</a><br>
+              <span style="color:#111;">+XXX XXX XX XX</span> <span style="color:#666;">(Optional)</span>
             </div>
 
-            <div style="margin-top: 12px;">
-              Ferko Signature Levent<br>
-              Kat 23, 34394, IST
+            <div style="margin-top:14px;">
+              <a href="https://codeway.co" target="_blank" style="color:#1155cc; text-decoration:underline; font-weight:600;">codeway.co</a>
             </div>
 
-            <div style="margin-top: 12px;">
-              <a href="https://codeway.co" target="_blank" style="color:#111; text-decoration:none; font-weight:600;">codeway.co</a><br>
-              <span style="color:#666;">Powering Ambitious Builders at Scale.</span>
-            </div>
-
-            <!-- GPTW badge (small, under text group) -->
-            <div style="margin-top: 12px;">
-              <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/gptw.png" width="62" alt="Great Place to Work" style="display:block; border:0; outline:none;">
+            <div style="margin-top:10px; color:#777; font-style:italic;">
+              Powering Ambitious Builders at Scale.
             </div>
           </td>
         </tr>
@@ -106,37 +99,32 @@
     <div class="row">
       <div class="title">Layout 2</div>
       <div>
-        <button onclick="copySig('sig2','ok2')">Copy</button>
-        <span id="ok2" class="ok">Copied ✅</span>
+        <button onclick="copySig('sig2','ok2')">Copy</button><span id="ok2" class="ok">Copied ✅</span>
       </div>
     </div>
+
     <div class="sigbox" id="sig2">
-      <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.35; color:#111;">
+      <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size:14px; line-height:1.35; color:#111;">
         <tr>
-          <td style="vertical-align: top; padding-right: 16px; width: 140px;">
+          <td valign="top" style="padding-right:16px; width:140px;">
             <table cellpadding="0" cellspacing="0" border="0" style="width:140px;">
               <tr>
                 <td style="text-align:center;">
-                  <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/logo-pack-03.png" width="120" alt="Codeway" style="display:block; border:0; outline:none; margin:0 auto;">
+                  <img data-asset="logo2" width="120" alt="Codeway" style="display:block; border:0; outline:none; margin:0 auto;">
                 </td>
               </tr>
               <tr>
-                <td style="text-align:center; padding-top: 10px;">
+                <td style="text-align:center; padding-top:10px;">
                   <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
                     <tr>
-                      <td style="padding-right: 8px;">
+                      <td style="padding-right:10px;">
                         <a href="https://www.instagram.com/codeway/?hl=en" target="_blank" style="text-decoration:none;">
-                          <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/instagram.png" width="22" height="22" alt="Instagram" style="display:block; border:0; outline:none;">
-                        </a>
-                      </td>
-                      <td style="padding-right: 8px;">
-                        <a href="https://www.youtube.com/@codewaystudios" target="_blank" style="text-decoration:none;">
-                          <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/youtube.png" width="22" height="22" alt="YouTube" style="display:block; border:0; outline:none;">
+                          <img data-asset="ig" width="22" height="22" alt="Instagram" style="display:block; border:0; outline:none;">
                         </a>
                       </td>
                       <td>
                         <a href="https://www.linkedin.com/company/codeway" target="_blank" style="text-decoration:none;">
-                          <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/linkedin.png" width="22" height="22" alt="LinkedIn" style="display:block; border:0; outline:none;">
+                          <img data-asset="li" width="22" height="22" alt="LinkedIn" style="display:block; border:0; outline:none;">
                         </a>
                       </td>
                     </tr>
@@ -146,28 +134,21 @@
             </table>
           </td>
 
-          <td style="vertical-align: top;">
-            <div style="font-size: 16px; font-weight: 700; white-space: nowrap;">Name&nbsp;Surname</div>
-            <div style="font-weight: 600; margin-top: 2px;">Job Title</div>
+          <td valign="top">
+            <div style="font-size:16px; font-weight:700;">Name Surname</div>
+            <div style="font-weight:600; margin-top:2px;">Job Title</div>
 
-            <div style="margin-top: 12px;">
-              <div>
-                <a href="mailto:xxx@codeway.co" style="color:#111; text-decoration:none;">xxx@codeway.co</a>
-              </div>
-              <div style="margin-top: 2px;">+XXX XXX XX XX <span style="color:#666;">(Optional)</span></div>
+            <div style="margin-top:12px;">
+              <a href="mailto:xxx@codeway.co" style="color:#111; text-decoration:none;">xxx@codeway.co</a><br>
+              <span style="color:#111;">+XXX XXX XX XX</span> <span style="color:#666;">(Optional)</span>
             </div>
 
-            <div style="margin-top: 12px;">
-              Ferko Signature Levent<br>
-              Kat 23, 34394, IST
+            <div style="margin-top:14px;">
+              <a href="https://codeway.co" target="_blank" style="color:#1155cc; text-decoration:underline; font-weight:600;">codeway.co</a>
             </div>
 
-            <div style="margin-top: 12px;">
-              <a href="https://codeway.co" target="_blank" style="color:#111; text-decoration:none; font-weight:600;">codeway.co</a>
-            </div>
-
-            <div style="margin-top: 12px;">
-              <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/gptw.png" width="62" alt="Great Place to Work" style="display:block; border:0; outline:none;">
+            <div style="margin-top:10px; color:#777; font-style:italic;">
+              Powering Ambitious Builders at Scale.
             </div>
           </td>
         </tr>
@@ -180,37 +161,32 @@
     <div class="row">
       <div class="title">Layout 3</div>
       <div>
-        <button onclick="copySig('sig3','ok3')">Copy</button>
-        <span id="ok3" class="ok">Copied ✅</span>
+        <button onclick="copySig('sig3','ok3')">Copy</button><span id="ok3" class="ok">Copied ✅</span>
       </div>
     </div>
+
     <div class="sigbox" id="sig3">
-      <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.35; color:#111;">
+      <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size:14px; line-height:1.35; color:#111;">
         <tr>
-          <td style="vertical-align: top; padding-right: 16px; width: 160px;">
-            <table cellpadding="0" cellspacing="0" border="0" style="width:160px;">
+          <td valign="top" style="padding-right:16px; width:180px;">
+            <table cellpadding="0" cellspacing="0" border="0" style="width:180px;">
               <tr>
-                <td style="text-align:center;">
-                  <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/logo-type.png" width="140" alt="Codeway" style="display:block; border:0; outline:none; margin:0 auto;">
+                <td style="text-align:left;">
+                  <img data-asset="logo3" width="160" alt="Codeway" style="display:block; border:0; outline:none;">
                 </td>
               </tr>
               <tr>
-                <td style="text-align:center; padding-top: 10px;">
-                  <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+                <td style="padding-top:10px;">
+                  <table cellpadding="0" cellspacing="0" border="0">
                     <tr>
-                      <td style="padding-right: 8px;">
+                      <td style="padding-right:10px;">
                         <a href="https://www.instagram.com/codeway/?hl=en" target="_blank" style="text-decoration:none;">
-                          <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/instagram.png" width="22" height="22" alt="Instagram" style="display:block; border:0; outline:none;">
-                        </a>
-                      </td>
-                      <td style="padding-right: 8px;">
-                        <a href="https://www.youtube.com/@codewaystudios" target="_blank" style="text-decoration:none;">
-                          <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/youtube.png" width="22" height="22" alt="YouTube" style="display:block; border:0; outline:none;">
+                          <img data-asset="ig" width="22" height="22" alt="Instagram" style="display:block; border:0; outline:none;">
                         </a>
                       </td>
                       <td>
                         <a href="https://www.linkedin.com/company/codeway" target="_blank" style="text-decoration:none;">
-                          <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/linkedin.png" width="22" height="22" alt="LinkedIn" style="display:block; border:0; outline:none;">
+                          <img data-asset="li" width="22" height="22" alt="LinkedIn" style="display:block; border:0; outline:none;">
                         </a>
                       </td>
                     </tr>
@@ -220,99 +196,21 @@
             </table>
           </td>
 
-          <td style="vertical-align: top;">
-            <div style="font-size: 16px; font-weight: 700; white-space: nowrap;">Name&nbsp;Surname</div>
-            <div style="font-weight: 600; margin-top: 2px;">Job Title</div>
+          <td valign="top">
+            <div style="font-size:16px; font-weight:700;">Name Surname</div>
+            <div style="font-weight:600; margin-top:2px;">Job Title</div>
 
-            <div style="margin-top: 12px;">
-              <div>
-                <a href="mailto:xxx@codeway.co" style="color:#111; text-decoration:none;">xxx@codeway.co</a>
-              </div>
-              <div style="margin-top: 2px;">+XXX XXX XX XX <span style="color:#666;">(Optional)</span></div>
+            <div style="margin-top:12px;">
+              <a href="mailto:xxx@codeway.co" style="color:#111; text-decoration:none;">xxx@codeway.co</a><br>
+              <span style="color:#111;">+XXX XXX XX XX</span> <span style="color:#666;">(Optional)</span>
             </div>
 
-            <div style="margin-top: 12px;">
-              Ferko Signature Levent<br>
-              Kat 23, 34394, IST
+            <div style="margin-top:14px;">
+              <a href="https://codeway.co" target="_blank" style="color:#1155cc; text-decoration:underline; font-weight:600;">codeway.co</a>
             </div>
 
-            <div style="margin-top: 12px;">
-              <a href="https://codeway.co" target="_blank" style="color:#111; text-decoration:none; font-weight:600;">codeway.co</a><br>
-              <span style="color:#666;">Powering Ambitious Builders at Scale.</span>
-            </div>
-
-            <div style="margin-top: 12px;">
-              <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/gptw.png" width="62" alt="Great Place to Work" style="display:block; border:0; outline:none;">
-            </div>
-          </td>
-        </tr>
-      </table>
-    </div>
-  </div>
-
-  <!-- ===== Layout 4 ===== -->
-  <div class="card">
-    <div class="row">
-      <div class="title">Layout 4</div>
-      <div>
-        <button onclick="copySig('sig4','ok4')">Copy</button>
-        <span id="ok4" class="ok">Copied ✅</span>
-      </div>
-    </div>
-    <div class="sigbox" id="sig4">
-      <table cellpadding="0" cellspacing="0" border="0" style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.35; color:#111;">
-        <tr>
-          <td style="vertical-align: top; padding-right: 16px; width: 160px;">
-            <table cellpadding="0" cellspacing="0" border="0" style="width:160px;">
-              <tr>
-                <td style="text-align:center;">
-                  <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/logo-type.png" width="140" alt="Codeway" style="display:block; border:0; outline:none; margin:0 auto;">
-                </td>
-              </tr>
-              <tr>
-                <td style="text-align:center; padding-top: 10px;">
-                  <table cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
-                    <tr>
-                      <td style="padding-right: 8px;">
-                        <a href="https://www.instagram.com/codeway/?hl=en" target="_blank" style="text-decoration:none;">
-                          <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/instagram.png" width="22" height="22" alt="Instagram" style="display:block; border:0; outline:none;">
-                        </a>
-                      </td>
-                      <td style="padding-right: 8px;">
-                        <a href="https://www.youtube.com/@codewaystudios" target="_blank" style="text-decoration:none;">
-                          <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/youtube.png" width="22" height="22" alt="YouTube" style="display:block; border:0; outline:none;">
-                        </a>
-                      </td>
-                      <td>
-                        <a href="https://www.linkedin.com/company/codeway" target="_blank" style="text-decoration:none;">
-                          <img src="https://brand-codeway.github.io/codeway-e-mail-signatures/assets/linkedin.png" width="22" height="22" alt="LinkedIn" style="display:block; border:0; outline:none;">
-                        </a>
-                      </td>
-                    </tr>
-                  </table>
-                </td>
-              </tr>
-            </table>
-          </td>
-
-          <td style="vertical-align: top;">
-            <div style="font-size: 16px; font-weight: 700; white-space: nowrap;">Name&nbsp;Surname</div>
-            <div style="font-weight: 600; margin-top: 2px;">Job Title</div>
-
-            <div style="margin-top: 12px;">
-              <div>
-                <a href="mailto:xxx@codeway.co" style="color:#111; text-decoration:none;">xxx@codeway.co</a>
-              </div>
-              <div style="margin-top: 2px;">+XXX XXX XX XX <span style="color:#666;">(Optional)</span></div>
-            </div>
-
-            <div style="margin-top: 12px;">
-              Ferko Signature Levent<br>
-              Kat 23, 34394, IST
-            </div>
-
-            <div style="margin-top: 12px;">
-              <a href="https://codeway.co" target="_blank" style="color:#111; text-decoration:none; font-weight:600;">codeway.co</a>
+            <div style="margin-top:10px; color:#777; font-style:italic;">
+              Powering Ambitious Builders at Scale.
             </div>
           </td>
         </tr>
@@ -323,18 +221,50 @@
 </div>
 
 <script>
+  // Set this to your GitHub Pages base URL so images resolve inside Gmail.
+  // Example: https://brand-codeway.github.io/codeway-e-mail-signatures
+  const BASE_URL = "";
+
+  const ASSETS = {
+    ig: "assets/instagram.png",
+    li: "assets/linkedin.png",
+    logo1: "assets/logo.png",
+    logo2: "assets/logo-pack-03.png",
+    logo3: "assets/logosiyh.png"
+  };
+
+  function urlFor(key) {
+    const rel = ASSETS[key];
+    if (!rel) return "";
+    return BASE_URL ? (BASE_URL.replace(/\/$/, "") + "/" + rel) : rel;
+  }
+
+  function applyAssetUrls() {
+    const nodes = document.querySelectorAll("[data-asset]");
+    nodes.forEach((img) => {
+      img.src = urlFor(img.getAttribute("data-asset"));
+    });
+  }
+
   function copySig(sigId, okId) {
     const el = document.getElementById(sigId);
-    const html = el.innerHTML.trim();
+
+    // Clone so we can strip data-asset and force absolute src in the copied HTML
+    const clone = el.cloneNode(true);
+    const imgs = clone.querySelectorAll("img[data-asset]");
+    imgs.forEach((img) => {
+      const key = img.getAttribute("data-asset");
+      img.src = urlFor(key);
+      img.removeAttribute("data-asset");
+    });
+
+    const html = clone.innerHTML.trim();
     const text = el.innerText.trim();
 
     const blobHtml = new Blob([html], { type: "text/html" });
     const blobText = new Blob([text], { type: "text/plain" });
 
-    const item = new ClipboardItem({
-      "text/html": blobHtml,
-      "text/plain": blobText
-    });
+    const item = new ClipboardItem({ "text/html": blobHtml, "text/plain": blobText });
 
     navigator.clipboard.write([item]).then(() => {
       const ok = document.getElementById(okId);
@@ -348,11 +278,14 @@
       sel.addRange(range);
       document.execCommand("copy");
       sel.removeAllRanges();
+
       const ok = document.getElementById(okId);
       ok.style.display = "inline";
       setTimeout(() => ok.style.display = "none", 1200);
     });
   }
+
+  applyAssetUrls();
 </script>
 </body>
 </html>
